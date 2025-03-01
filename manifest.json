@@ -3,7 +3,7 @@
   "name": "Meet Video Rotator",
   "version": "1.0",
   "description": "Rotate Google Meet video to any angle (0°-360°).",
-  "permissions": ["activeTab", "scripting"],
+  "permissions": ["activeTab", "scripting", "storage"],
   "host_permissions": ["https://meet.google.com/*"],
   "background": {
     "service_worker": "background.js"
