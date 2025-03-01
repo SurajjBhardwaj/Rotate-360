@@ -1,16 +1,14 @@
 (function () {
-  let video = document.querySelector("video");
+  let videos = document.querySelectorAll("video");
 
-  if (!video) {
+  if (videos.length === 0) {
     alert("No video found on this page.");
     return;
   }
 
-  let angle = parseFloat(localStorage.getItem("videoRotation")) || 0;
-
-  angle = (angle + 90) % 360; // Change this value as needed
-  video.style.transform = `rotate(${angle}deg)`;
-  video.style.transition = "transform 0.3s ease-in-out";
-
-  localStorage.setItem("videoRotation", angle);
+  videos.forEach((video, index) => {
+    let angle = parseFloat(localStorage.getItem("videoRotation" + index)) || 0;
+    video.style.transform = `rotate(${angle}deg)`;
+    video.style.transition = "transform 0.3s ease-in-out";
+  });
 })();
